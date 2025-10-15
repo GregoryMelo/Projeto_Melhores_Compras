@@ -1,96 +1,165 @@
-# 📊 Desafio de Projeto: Nível de Atendimento ao Cliente - Melhores Compras LTDA
-
-Este repositório contém a solução desenvolvida para o desafio de projeto do bootcamp **Imersão no Universo dos Dados** (FIAP).  
-O projeto consiste na criação de uma camada de persistência de dados para uma nova funcionalidade da empresa de e-commerce **Melhores Compras LTDA**.
+# 🎥 Projeto SGV - Sistema de Gerenciamento de Vídeos  
+**Melhores Compras LTDA**
 
 ---
 
-## 🎯 Objetivo
-O objetivo principal foi **modelar e implementar um banco de dados relacional** para suportar uma nova funcionalidade na plataforma de e-commerce.  
-Essa funcionalidade permite:
+## 📌 Visão Geral do Projeto
 
-- Armazenamento de dados de vídeos de produtos;  
-- Registro de informações de visualização;  
-- Registro de sugestões e dúvidas dos clientes sobre os produtos.  
+Este repositório contém o desenvolvimento completo do **Sistema de Gerenciamento de Vídeos (SGV)** da empresa **Melhores Compras LTDA**. O projeto foi desenvolvido em fases (Sprints), abordando desde a **modelagem de dados** até a **implementação de lógica de negócio com Python** e **armazenamento em JSON**.
 
-A solução foca na **persistência de dados**, sendo o primeiro passo para a transformação digital da empresa.  
+O objetivo do SGV é fornecer uma solução robusta para:
 
-No estudo de caso, o projeto anterior já existia, mas apresentava **diversas inconsistências e quebras de boas práticas** na modelagem.  
-Diante disso, fomos **“contratados” para corrigir e aprimorar** essa estrutura, garantindo a integridade do banco e implementando as novas funcionalidades solicitadas.  
+- Gerenciamento de conteúdo de vídeo;
+- Registro de visualizações;
+- Apoio a decisões estratégicas com base em dados (data-driven).
 
 ---
 
-## 💻 Tecnologias Utilizadas
-- **Oracle Data Modeler** → Modelagem do banco de dados (Modelos Entidade-Relacionamento Lógico e Físico).  
-- **Oracle SQL Developer** → Criação e manipulação do banco de dados.  
-- **JupyterLab (Python)** → Desenvolvimento da lógica de negócio e validação dos dados (análise do nível de atendimento do SAC).  
+## 🛠️ Tecnologias Utilizadas
+
+- **Banco de Dados:** Oracle SQL / SGBD Oracle  
+- **Modelagem:** Oracle Data Modeler  
+- **Linguagem:** Python (com uso de função Lambda e tratamento de exceções)  
+- **Formato de Dados:** JSON  
+- **Conceitos Aplicados:** DML, DQL, Metodologia Ágil e ESG (Sustentabilidade)
 
 ---
 
-## 📁 Estrutura do Projeto
-O repositório está organizado da seguinte forma:
+## 📁 Estrutura do Repositório (Organizado por Fases)
 
-- **Melhores_Compras_MER_Logico.pdf** → Diagrama do Modelo Entidade-Relacionamento (MER) Lógico.  
-- **Melhores_Compras_MER_Fisico.pdf** → Diagrama do Modelo Entidade-Relacionamento (MER) Físico.  
-- **Script_DDL_Melhores_Compras.sql** → Script DDL para criação das tabelas no banco de dados.  
-- **Codigo_Nivel_Atendimento_SAC_Melhores_Compras.py** → Script em Python que analisa dados de atendimento e calcula o nível de satisfação do cliente com base no tempo de resposta.  
-- **Evidencia_Teste_Melhores_Compras.pdf** → Evidências da criação das tabelas no banco de dados e consultas de teste.  
-- **Evidencia_Teste_Nivel_Atendimento_SAC_Melhores_Compras.pdf** → Evidências da execução do script em Python e da validação da lógica de negócio.  
+### 📂 Fase 01 — Modelagem de Dados (Camada de Persistência)
 
----
+> Estruturação inicial do banco de dados, correção de inconsistências e elaboração dos diagramas.
 
-## 🚀 Como Executar o Projeto
-
-### 1. Configuração do Banco de Dados
-1. Certifique-se de ter o **Oracle SQL Developer** configurado.  
-2. Execute o script **`Script_DDL_Melhores_Compras.sql`** para criar as tabelas.  
-
-### 2. Execução do Script Python
-1. Instale o **Python 3.x** e o **JupyterLab**, se ainda não tiver.  
-2. Abra o arquivo **`Codigo_Nivel_Atendimento_SAC_Melhores_Compras.py`** no JupyterLab.  
-3. Execute o script. Ele irá analisar os dados simulados de atendimento e exibir o nível de satisfação do cliente.  
+| Arquivo | Descrição |
+|--------|-----------|
+| `Melhores_Compras_MER_Logico.pdf` | Diagrama MER Lógico |
+| `Melhores_Compras_MER_Fisico.pdf` | Diagrama MER Físico |
+| `Script_DDL_Melhores_Compras.sql` | Script DDL para criação das tabelas no Oracle |
+| `Codigo_Nivel_Atendimento_SAC_Melhores_Compras.py` | Script Python para análise do atendimento SAC |
+| `Documentação da Fase` | Evidências de testes, prints e validações |
 
 ---
 
-### 🔹 Lógica de Negócio (Python)
-O script implementa uma lógica simples:  
+### 📂 Fase 02 — Start Data Management (Implementação e Manipulação)
 
-- Calcula com base de uma nota de 0 a 100, sendo 100 um atendimento de qualidade, e 0 de um atendimento insatisfatorio.
-- Com base no tempo de resposta, atribui o **nível de atendimento**:
+> Aplicação prática dos dados, scripts de manipulação e lógica de negócio.
 
-  ## 📝 Exemplo de Código em Python
+| Arquivo | Descrição |
+|--------|-----------|
+| `1_2_comandos_DML.sql` | Script com comandos `INSERT`, `UPDATE`, `DELETE`, `COMMIT` e testes de integridade |
+| `1_3_comandos_DQL.sql` | Consultas SQL (`SELECT`) para extração de dados relevantes |
+| `1_4_algoritmo_produto.py` | Algoritmo Python com cadastro de produtos e cálculo de ICMS |
+| `1_5_arquivo_produto.json` | Arquivo JSON gerado com os produtos cadastrados |
+| `1_6_ProgramaSustentabilidade.docx` | Documento com planejamento ESG (foco ambiental) |
 
-```python
-nota = int(input('(De 0 a 100)\nDigite a sua nota: '))
+---
 
-if nota >= 90 and nota <= 100:
-    print(f"\nSua nota foi de {nota}\nRepresenta: \033[32mQualidade!\033[0m\nObrigado pela sua nota!")
-elif nota >= 70 and nota <= 89:
-    print(f"\nSua nota foi de {nota}\nRepresenta: \033[33mNeutro!\033[0m\nObrigado pela sua nota!")
-elif nota >= 0 and nota < 70:
-    print(f"\nSua nota foi de {nota}\nRepresenta: \033[31mInsatisfatório!\033[0m\nObrigado pela sua nota!")
-else:
-    print(f"\nA nota {nota} é \033[31minválida\033[0m.\nPor favor, digite um valor entre 0 e 100.")
+## ⚙️ Destaques da Fase 02
+
+### ✅ Comandos DML & Testes de Integridade
+
+- Uso adequado de `TO_DATE`, `SEQUENCE/IDENTITY`;
+- Simulação de erro de integridade:
+  - **Login duplicado** (violação de UNIQUE);
+  - **Tentativa de DELETE** em entidade com dependência (FOREIGN KEY).
+
+---
+
+### 🐍 Algoritmo Python (`1_4_algoritmo_produto.py`)
+
+O script Python desenvolvido para cadastro de produtos foi implementado com atenção à usabilidade, cálculos tributários e robustez no tratamento de erros.
+
+#### ✅ Funcionalidades Implementadas:
+
+- **Lista de produtos** (`produtos = []`) usada para armazenar dinamicamente os cadastros.
+- **Função Lambda** para cálculo de ICMS (18% sobre o valor do produto).
+- **Laço principal `while True`** para permitir o cadastro contínuo de múltiplos produtos.
+- **Geração de JSON** automático após o cadastro de 5 ou mais produtos (`1_5_arquivo_produto.json`).
+
+#### 🛡️ Tratamentos de Erro e Validações:
+
+- ✅ **Descrição do produto**
+  - Remove espaços em branco e formata para capitalização.
+  - **Validação obrigatória:** impede cadastro com campo vazio.
+
+- ✅ **Valor do produto**
+  - Conversão para `float`, com tratamento de erro `ValueError` caso o input não seja numérico.
+  - **Validação de valor positivo:** rejeita valores zero ou negativos com mensagem personalizada.
+
+- ✅ **Tipo de embalagem**
+  - Remove espaços e capitaliza.
+  - **Validação obrigatória:** impede campo vazio.
+
+- ✅ **Confirmação de continuidade**
+  - Aceita apenas 's' ou 'n' como resposta válida.
+  - **Loop de validação:** impede que o usuário continue com entradas inválidas.
+
+- ✅ **Validação de quantidade mínima para gerar JSON**
+  - Gera o arquivo `.json` **somente se** houver no mínimo **5 produtos cadastrados**.
+  - Caso contrário, exibe mensagem de aviso personalizada.
+
+- ✅ **Tratamento de exceção ao salvar o arquivo JSON**
+  - Envolvido em `try/except` para capturar e exibir falhas na escrita do arquivo.
+
+#### 💡 Exemplo de estrutura gerada no JSON:
+
+```json
+[
+    {
+        "descrição_produto": "Banana Nanica",
+        "valor_produto": 4.5,
+        "tipo_embalagem": "Pacote",
+        "valor_icms": 0.81
+    },
+]
 ```
-
-Esse código em Python recebe uma nota entre 0 e 100 digitada pelo usuário e classifica o resultado em três categorias:
-
-Qualidade (verde): notas entre 90 e 100.
-
-Neutro (amarelo): notas entre 70 e 89.
-
-Insatisfatório (vermelho): notas entre 0 e 69.
-
-Caso o valor esteja fora do intervalo 0 a 100, é exibida uma mensagem de nota inválida.
-
-As cores são exibidas no terminal utilizando códigos ANSI.
----
-
-## ✨ Destaques do Projeto
-- **Modelagem completa** → Inclui os modelos lógico e físico.  
-- **Aplicação prática da regra de negócio** → Python utilizado para medir satisfação do cliente.  
-- **Boas práticas** → Separação de responsabilidades:  
-  - SQL para banco de dados.  
-  - Python para lógica e análise.  
+O script oferece uma experiência interativa, segura e alinhada a boas práticas de programação em Python, com foco na confiabilidade e clareza para o usuário final.
 
 ---
+
+### 🌱 ESG - Sustentabilidade (Foco Ambiental)
+
+Documento `1_6_ProgramaSustentabilidade.docx` aborda:
+
+- **Diagnóstico:** Consumo energético de servidores e impactos logísticos;
+- **Metas:** 
+  - Redução de consumo;
+  - Coleta seletiva;
+  - TI Verde;
+- **Iniciativas:**
+  - Substituição de equipamentos por versões com selo **Energy Star**;
+  - Descarte correto de **REEE** (Resíduos de Equipamentos Eletroeletrônicos);
+- **Benefícios Esperados:** 
+  - Redução de custos;
+  - Menor pegada de carbono;
+  - Alinhamento ao **ODS 12** da ONU.
+
+---
+
+## ▶️ Como Executar o Projeto
+
+1. **Criar Banco de Dados (Fase 01):**
+   - Execute o script `Script_DDL_Melhores_Compras.sql` no Oracle SQL Developer.
+
+2. **Popular Dados (Fase 02):**
+   - Execute `1_2_comandos_DML.sql` para inserir e testar dados.
+
+3. **Realizar Consultas:**
+   - Execute `1_3_comandos_DQL.sql` para obter insights do sistema.
+
+4. **Executar Algoritmo Python:**
+   - Execute `1_4_algoritmo_produto.py` com Python 3.x.
+   - Após cadastrar no mínimo 5 produtos, será gerado o arquivo `1_5_arquivo_produto.json`.
+
+---
+
+## 📎 Referências
+
+> As citações utilizadas no projeto foram baseadas em fontes confiáveis, como relatórios da ONU, artigos acadêmicos e documentos técnicos, relacionados a ESG, TI Verde e boas práticas em banco de dados e programação.
+
+---
+
+## ✅ Status do Projeto
+
+> ✅ **Concluído** — Todas as entregas das fases 01 e 02 foram finalizadas com sucesso, incluindo a documentação, testes, scripts e lógica de negócio.
