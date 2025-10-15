@@ -1,0 +1,32 @@
+[
+    {
+        "descrição_produto": "Banana Nanica",
+        "valor_produto": 12.5,
+        "tipo_embalagem": "Sacola Plástica",
+        "valor_icms": 2.25
+    },
+    {
+        "descrição_produto": "Maça",
+        "valor_produto": 30.0,
+        "tipo_embalagem": "Caixa Grande",
+        "valor_icms": 5.4
+    },
+    {
+        "descrição_produto": "Melancia",
+        "valor_produto": 10.9,
+        "tipo_embalagem": "Cesto",
+        "valor_icms": 1.96
+    },
+    {
+        "descrição_produto": "Mouse Gamer",
+        "valor_produto": 120.99,
+        "tipo_embalagem": "Plástico Pbt",
+        "valor_icms": 21.78
+    },
+    {
+        "descrição_produto": "Funko Thor Edição Limitada",
+        "valor_produto": 3542.67,
+        "tipo_embalagem": "Caixinha",
+        "valor_icms": 637.68
+    }
+]
